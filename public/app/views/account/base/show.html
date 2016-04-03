@@ -1,0 +1,176 @@
+
+<div ng-controller="ShowBaseCtrl"></div>
+
+
+ <div class="row text-center test">
+        <h2> FRONT OFFICE - BASE </h2>
+    </div>
+    
+    <hr>
+
+  
+
+  <br>
+    <form class="columns large-5 large-centered" ng-model="monster">
+    <fieldset>
+      <legend>MONSTER NR° {{monster._id}}</legend>
+             
+        <div class="row collapse">
+            <div class="small-2  columns">
+              <span class="prefix">Name</span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" disabled value={{monster.name}}>
+            </div>
+        </div>
+
+
+        <div class="row collapse">
+            <div class="small-2  columns">
+             <span class="prefix">Type</span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" disabled value={{monster.type}}>
+            </div>
+        </div>
+
+        <div class="row collapse">
+            <div class="small-2  columns">
+             <span class="prefix">Starter</span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" disabled value={{monster.isStarter}}>
+            </div>
+        </div>
+
+        <div class="row collapse">
+            <div class="small-2  columns">
+             <span class="prefix">Rarity (%)</span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" disabled value={{monster.rarity*100}}>
+            </div>
+        </div>
+
+
+         <div class="row collapse">
+            <div class="small-2  columns">
+             <span class="prefix">Level</span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" disabled value={{monster.level}}>
+            </div>
+        </div>
+
+        <div class="row collapse">
+            <div class="small-2  columns">
+             <span class="prefix">Health</span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" disabled value={{monster.hp}}>
+            </div>
+        </div>
+
+        <br>
+
+
+
+        <form class="columns large-12 large-centered">
+          <fieldset>
+            <legend>ATTACKS</legend>
+
+            <div class="row collapse">
+              <div class="small-2  columns">
+                   <span class="prefix">Attack 1</span>
+                  </div>
+              <div class="small-10  columns">
+                <input type="text" disabled value={{monster.attacks[0].name}}>
+                </select>
+                
+              </div>
+            </div>
+
+            <div class="row collapse">
+              <div class="small-2  columns">
+                   <span class="prefix">Attack 2</span>
+                  </div>
+              <div class="small-10  columns">
+                <input type="text" disabled value={{monster.attacks[1].name}}>
+                </select>
+                
+              </div>
+            </div>
+
+            <div class="row collapse">
+              <div class="small-2  columns">
+                   <span class="prefix">Attack 3</span>
+                  </div>
+              <div class="small-10  columns">
+                <input type="text" disabled value={{monster.attacks[2].name}}>
+                </select>
+                
+              </div>
+            </div>
+
+            <div class="row collapse">
+              <div class="small-2  columns">
+                   <span class="prefix">Attack 4</span>
+                  </div>
+              <div class="small-10  columns">
+                <input type="text" disabled value={{monster.attacks[3].name}}>
+                </select>
+                
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+
+        <br>
+
+
+        <form class="columns large-12 large-centered">
+          <fieldset>
+            <legend>STATISTICS</legend>
+
+            <div class="row collapse">
+                <div class="small-2  columns">
+                 <span class="prefix">Attack</span>
+                </div>
+                <div class="small-10  columns">
+                  <input type="text" disabled value={{monster.statistics.attack}}>
+                </div>
+            </div>
+
+            <div class="row collapse">
+                <div class="small-2  columns">
+                 <span class="prefix">Defense</span>
+                </div>
+                <div class="small-10  columns">
+                  <input type="text" disabled value={{monster.statistics.defense}}>
+                </div>
+            </div>
+
+            <div class="row collapse">
+                <div class="small-2  columns">
+                 <span class="prefix">Speed</span>
+                </div>
+                <div class="small-10  columns">
+                  <input type="text" disabled value={{monster.statistics.speed}}>
+                </div>
+            </div>
+
+          </fieldset>
+        </form>
+
+
+      
+    <a class="button success" ng-click="hire(monster._id)"> Hire </a>
+      
+    </fieldset>
+  </form> 
+
+
+  
+
+  <br>

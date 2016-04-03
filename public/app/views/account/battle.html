@@ -1,0 +1,147 @@
+<div ng-controller="BattleCtrl"></div>
+
+
+ <div class="row text-center test">
+        <h2> FRONT OFFICE - BATTLE </h2>
+    </div>
+    
+    <hr>
+
+    <br><br>
+
+    <div ng-if="state == 'DENIED'" ng-model="state">
+    	<h3 class="text-center">ACCES DENIED</h3>
+    	<h4 class="text-center">You need to be logged in to find a battle.</h4>
+    	<br>
+    </div>
+
+    <div ng-if="state == 'LOADING'" ng-model="state">
+    	<h3 class="text-center">LOOKING FOR A BATTLE</h3>
+    	<h4 class="text-center">Please wait</h4>
+    	<br>
+	    <center>
+	    	<img src="images/483.GIF" />
+	    </center>
+    </div>
+
+    <div ng-if="state == 'BATTLING'">
+	    <div class="row large-7">
+		    <div class="panel header large-centered medium-10 large-10">
+			    	<div class="sign">
+			    		<h3>{{opponentPseudo}}</h3>
+			    	</div>
+
+			    	
+
+			    	<!--<div class=" columns panel left large-5">-->
+
+			    	<form class=" row large-centered large-7">
+				    	<fieldset>
+				    		<legend>CURRENT MOB</legend>
+				    
+			    		
+			    		<div class="panel">
+			    			<div class="row">
+			    				
+			    				
+			    				<span class="label left alert"><span class="fi-heart"></span> HP : {{currentOpponentMob.hp}}</span>
+			    				<span class="label right"><span class="fi-star"></span> Level : {{currentOpponentMob.level}}</span>
+			    			</div>
+			    				
+			    			<hr>
+			    			<a class="button columns alert medium-centered small-centered large-centered text-center">{{currentOpponentMob.name}}</a>
+			    		</div>
+			    	
+
+			    		</fieldset>
+			    	</form>
+
+
+			    	<br>
+			    </div>
+
+			    <div class="large-12 large-centered text-center"><img src="images/vs.png" style="width:150px; height:150px"></div>
+			    <br>
+
+		   
+			    <div class="panel header large-centered medium-10 large-10">
+			    	<div class="sign">
+			    		<h3>{{user.pseudo}}</h3>
+			    	</div>
+
+			    	<form class="row large-centered large-7">
+				    	<fieldset>
+				    		<legend>CURRENT MOB</legend>
+				    
+			    		
+			    		<div class="panel">
+			    			<div class="row">
+			    				
+			    				
+			    				<span class="label left alert"><span class="fi-heart"></span> HP : {{currentMob.hp}}</span>
+			    				<span class="label right"><span class="fi-star"></span> Level : {{currentMob.level}}</span>
+			    			</div>
+			    				
+			    			<hr>
+
+			    			<a ng-disabled="turn == false" class="button split columns large-centered text-center">{{currentMob.name}} <span data-dropdown="drop"></span></a><br>
+							<ul id="drop" class="f-dropdown" data-dropdown-content>
+							  <li ng-repeat="attack in currentMob.attacks"><a ng-click="sendAttack(attack)">
+							  Name: {{attack.name}}
+							  <br>
+							  Power: {{attack.power}}
+							  <br>
+							  Precision: {{attack.precision*100}}%
+
+							  </a></li>
+							</ul>
+							<div class="row">
+								<button ng-repeat="attack in currentMob.attacks" ng-disabled="turn == false" class="button warning left columns large-3" ng-click="sendAttack(attack)">
+									{{attack.name}}
+								</button>
+							</div>
+			    		</div>
+			    	
+
+			    		</fieldset>
+			    	</form>
+			    	
+			    	<form class="row large-centered large-5" ng-if="user.team.monsters">
+				    	<fieldset>
+				    		<legend>TEAM : Click to swap your mob</legend>
+
+			    		<div class="panel" ng-repeat="mob in user.team.monsters" ng-if="mob._id != currentMob._id">
+			    			<div class="row">
+			    				
+			    				
+			    				<span ng-if="mob.hp > 0"class="label left alert"><span class="fi-heart"></span> HP : {{mob.hp}}</span>
+			    				<span ng-if="mob.hp <= 0"class="label left secondary"><span class="fi-skull"></span> HP : 0</span>
+			    				<span class="label right"><span class="fi-star"></span> Level : {{mob.level}}</span>
+			    			</div>
+			    				
+			    			<hr>
+
+			    			<a ng-disabled="turn == false || mob.hp <= 0" class="button secondary columns medium-centered small-centered large-centered text-center" ng-click="switchMob(mob)">{{mob.name}}</a>
+			    		</div>
+			    		
+			    		</fieldset>
+			    	</form>	
+
+			    	<br>
+
+			    </div>
+		    
+		</div>
+
+
+	</div>
+
+    
+   <div ng-if="state == 'END'">
+   <h3 class="text-center">End of the battle.</h3>
+   <br>
+   <h5 class="text-center">Your gold : {{gold}}</h5>
+
+   <br><br>
+
+   </div>

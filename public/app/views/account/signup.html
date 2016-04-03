@@ -1,0 +1,59 @@
+
+<div ng-controller="SignupCtrl">
+  <div class="row">
+
+    <div class="row text-center test">
+        <h2> REGISTRATION FORM </h2>
+    </div>
+    
+    <hr>
+
+    
+    <br>
+    <form class="columns large-5 large-centered">
+    <fieldset>
+      <legend>REGISTER</legend>
+
+     
+        <div class="row collapse">
+            <div class="small-2  columns">
+              <span class="prefix"><i class="fi-torso-female"></i></span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" placeholder="pseudo" ng-model="user.pseudo">
+            </div>
+        </div>
+
+
+        <div class="row collapse">
+            <div class="small-2  columns">
+              <span class="prefix"><i class="fi-key"></i></span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" placeholder="password" ng-model="user.password">
+            </div>
+        </div>
+
+        <div class="row collapse">
+            <div class="small-2  columns">
+              <span class="prefix"><i class="fi-key"></i></span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" placeholder="confirm password" ng-model="confirmPassword">
+            </div>
+        </div>
+        <br>
+
+        <button class="button alert" ng-click="sendForm()"> REGISTER &nbsp; <span class="fi-arrow-right"></span></button>
+      
+      
+    </fieldset>
+  </form> 
+
+  <br>
+
+
+
+   </div>
+
+</div>

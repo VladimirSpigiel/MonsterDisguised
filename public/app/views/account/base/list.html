@@ -1,0 +1,44 @@
+<div ng-controller="ListBaseCtrl"></div>
+
+
+ <div class="row text-center test">
+        <h2> FRONT OFFICE - BASE </h2>
+    </div>
+    
+    <hr>
+
+
+<div class="row text-center">
+    <a ng-click="buy()" class="button success" ng-if="base">
+    BUY A MONSTER
+    </a>
+
+    <a ng-click="begin()" class="button success" ng-if="base == false">
+    GET YOUR STARTER KIT
+    </a>
+  </div>
+  
+  <table class="flat-table" >
+              <tbody>
+                <tr>
+                  <th width="200">Name</th>
+                  <th width="200">Description</th>
+                  <th width="200">Rarity (%)</th>
+                  <th width="200">Level</th>
+                  <th width="200">Type</th>
+                  <th width="50">Show</th>
+                  <th width="50">Hire</th>
+                </tr>
+                <tr class="content" ng-repeat="monster in base">
+                  <td>{{monster.name}}</td>
+                  <td>{{monster.description}}</td>
+                  <td>{{monster.rarity*100}}</td>
+                  <td>{{monster.level}}</td>
+                  <td>{{monster.type}}</td>
+                    <td><a href="#/manage_base/show/{{monster._id}}"><span class="fi-eye"></span></a></td>
+                  <td><a ng-click="hire(monster._id)"><span class="fi-download"></span></a></td>
+                     
+                </tr>
+                
+              </tbody>
+            </table> 

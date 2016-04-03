@@ -1,0 +1,66 @@
+<div ng-controller="ListTeamCtrl"></div>
+
+
+ <div class="row text-center test">
+        <h2> FRONT OFFICE - TEAM </h2>
+    </div>
+    
+    <hr>
+    <br>
+    <center>
+    <a href="#/manage_base" class="button large text-center"ng-if="team.monsters == false">
+    	You have no monsters in your team. Return to your base in order to hire mobs
+    </a>
+    </center>
+
+
+
+    <div class="row">
+
+	      <div class="medium-6 large-3 small-12 left columns" ng-repeat="monster in team.monsters">
+	        <div class="box">
+	          <div class="box-icon">
+	            <span class="fi-paw"></span>
+	          </div>
+	          <div class="info">
+	            <h4 class="text-center">{{monster.name}}</h4>
+	            <br>
+	            <p ng-if="monster.description">
+		            <b>Description : </b>
+		            <br>
+		            {{monster.description}}
+	            </p>
+
+	            <p ng-if="monster.attacks">
+		            <b>Attacks : </b>
+		       		<br>
+		       		<span ng-repeat="attack in monster.attacks">- 	{{attack.name | uppercase}}<br>  </span>
+	
+	            </p>
+
+	            <p>
+		            <b>Statistics : </b>
+		            <br>
+		            	Attack : {{monster.statistics.attack}}
+		            <br>
+		            	Defense : {{monster.statistics.defense}}
+		            <br>
+		            	Speed : {{monster.statistics.speed}}
+	            </p>
+	            <br>
+
+	            <div class="small-6 small-centered text-center columns">
+	            <button ng-click="fire(monster._id)" class="button secondary text-center">FIRE</button>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+     
+    </div>
+
+
+    <br>
+
+
+
+

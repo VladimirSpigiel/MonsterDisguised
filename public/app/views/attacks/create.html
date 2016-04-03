@@ -1,0 +1,86 @@
+
+<div ng-controller="CreateAttacksCtrl"></div>
+
+
+ <div class="row text-center test">
+        <h2> BACK OFFICE - ATTACKS </h2>
+    </div>
+    
+    <hr>
+  
+  
+
+  <br>
+    <form class="columns large-5 large-centered" ng-model="attack">
+    <fieldset>
+      <legend>ATTACK CREATION</legend>
+             
+        <div class="row collapse">
+            <div class="small-2  columns">
+              <span class="prefix">Name</span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" ng-model="attack.name">
+            </div>
+        </div>
+
+        <div class="row collapse">
+            <div class="small-2  columns">
+              <span class="prefix">Description</span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" ng-model="attack.description">
+            </div>
+        </div>
+
+
+        <div class="row collapse">
+            <div class="small-2  columns">
+             <span class="prefix">Type</span>
+            </div>
+            <div class="small-10  columns">
+              <select ng-model="attack.type">
+            
+                <option value="EAU">EAU</option>
+                <option value="AIR">AIR</option>
+                <option value="SOL">SOL</option>
+                <option value="FEU">FEU</option>
+                <option value="INSECTE">INSECTE</option>
+              </select>
+              
+            </div>
+        </div>
+
+         <div class="row collapse">
+            <div class="small-2  columns">
+              <span class="prefix">Power</span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" ng-model="attack.power">
+            </div>
+        </div>
+
+
+
+
+        <div class="row collapse">
+            <div class="small-2  columns">
+             <span class="prefix">Precision [0;1]</span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" ng-model="attack.precision">
+            </div>
+        </div>
+
+
+        <br>
+
+      
+    <button class="button success left" ng-click="sendForm()"> Create </button>
+
+    <a href="#/manage_attacks/list" class="button secondary right"> Cancel </a>
+      
+    </fieldset>
+  </form> 
+
+  <br>

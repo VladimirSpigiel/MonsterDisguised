@@ -1,0 +1,10 @@
+{"_id":{"$oid":"5669b71ddf2552800f88dac9"},"name":"Lance flammes","type":"FEU","precision":0.6,"power":160,"__v":0}
+{"_id":{"$oid":"5669cd36df2552800f88dacc"},"name":"Griffure","type":"INSECTE","precision":0.7,"power":135,"__v":0}
+{"_id":{"$oid":"5669cd95df2552800f88dacd"},"name":"Morsure","type":"INSECTE","precision":0.5,"power":150,"__v":0}
+{"_id":{"$oid":"5669cee1df2552800f88dace"},"name":"Lacération","type":"AIR","precision":0.5,"power":160,"__v":0}
+{"_id":{"$oid":"566b1d1ddf2552800f88dacf"},"name":"Jet de sable","type":"SOL","precision":0.9,"power":90,"__v":0}
+{"_id":{"$oid":"566b2104df2552800f88dad2"},"name":"Pistolet à eau","type":"EAU","precision":0.6,"power":110,"__v":0}
+{"_id":{"$oid":"566b217edf2552800f88dad3"},"name":"Piqûre","type":"INSECTE","precision":0.7,"power":135,"__v":0}
+{"_id":{"$oid":"566b21bcdf2552800f88dad4"},"name":"Tornade","type":"AIR","precision":0.8,"power":120,"__v":0}
+{"_id":{"$oid":"566b2285df2552800f88dad6"},"name":"Charge","type":"SOL","precision":0.7,"power":100,"__v":0}
+{"_id":{"$oid":"566b24cddf2552800f88dada"},"name":"Tunnel","type":"SOL","precision":0.7,"power":130,"__v":0}

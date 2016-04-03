@@ -1,0 +1,133 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fakemon !</title>
+    <link rel="stylesheet" href="styles/foundation.css" />
+    <link rel="stylesheet" href="styles/mon_css.css" />
+    <link rel="stylesheet" href="styles/alert.css" />
+    <link rel="stylesheet" href="styles/summary.css" />
+     <link rel="stylesheet" href="styles/card.css" />
+     <link rel="stylesheet" href="styles/table.css" />
+    <link rel="stylesheet" href="styles/foundation-icons.css" />
+
+
+
+
+  </head>
+
+  <body ng-app="projetApp">
+
+
+    <nav class="menu">
+<h1 class="name"><i class="fi-lightbulb style3"></i> FAKEMON </a></h1>      
+      <ul class="inline-list">
+      <li><a href="#/home/">HOME</a></li>
+
+      <li>
+<a href="#" data-dropdown="hover1" data-options="is_hover:true;">BACK-OFFICE</a>
+<ul id="hover1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+  <li><a href="#/manage_monsters/list/">Manage monsters</a></li>
+  <li><a href="#/manage_attacks/list/">Manage attacks</a></li>
+  <li><a href="#/manage_users/list/">Manage users</a></li>
+</ul>
+
+      </li>
+
+         <li>
+<a href="#" data-dropdown="hover2" data-options="is_hover:true;">DASHBOARD</a>
+<ul id="hover2" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+  <li><a href="#/battle/">Find a battle</a></li>
+  <li><a href="#/manage_team/">Manage team</a></li>
+  <li><a href="#/manage_base/">Manage base</a></li>
+  
+</ul>
+
+      </li>
+  
+      </ul>
+      <ul class="inline-list hide-for-small-only account-action">
+        <li><a href="#/login" data-reveal-id="myModal">Login</a></li>
+        <li class=""><a class="signup" href="#/signup" data-reveal-id="myModal">Signup</a></li>
+      </ul>
+      <a class="account hide-for-medium-up" href="#" data-reveal-id="myModal"><i class="fi-unlock"></i></a>
+    </nav>
+
+    
+    <div class="container">
+      
+      <div ng-view=""></div>
+
+       <hr>
+    </div>  
+
+
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="row full-width">
+    <div class="small-12 medium-3 large-4 columns">
+      <i class="fi-projection-screen"></i>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum maiores alias ea sunt facilis impedit fuga dignissimos illo quaerat iure in nobis id quos, eaque nostrum! Unde, voluptates suscipit repudiandae!</p>
+    </div>
+    <div class="small-12 medium-3 large-4 columns">
+      <i class="fi-loop"></i>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit impedit consequuntur at! Amet sed itaque nostrum, distinctio eveniet odio, id ipsam fuga quam minima cumque nobis veniam voluptates deserunt!</p>
+    </div>
+    <div class="small-6 medium-3 large-2 columns">
+      <h4>Work With Me</h4>
+      <ul class="footer-links">
+        <li><a href="#">What I Do</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">FAQ's</a></li>
+      <ul>
+    </div>
+    <div class="small-6 medium-3 large-2 columns">
+      <h4>Follow Me</h4>
+      <ul class="footer-links">
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Dribbble</a></li>
+      <ul>
+    </div>
+  </div>
+</footer>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="libs/angular.js"></script>
+    <script src="libs/angular-animate.js"></script>
+    <script src="libs/angular-resource.js"></script>
+    <script src="libs/angular-route.js"></script>
+  
+    <script src="scripts/vendor/jquery.js"></script>
+    <script src="scripts/vendor/modernizr.js"></script>
+    <script src="scripts/foundation.min.js"></script>
+    <script src="scripts/foundation/foundation.alert.js"></script>
+    <script src="libs/jquery.growl.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/manage_team.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/signup.js"></script>
+    <script src="scripts/controllers/manage_base.js"></script>
+    <script src="scripts/controllers/manage_monsters.js"></script>
+    <script src="scripts/controllers/manage_attacks.js"></script>
+    <script src="scripts/controllers/manage_users.js"></script>
+    <script src="scripts/controllers/manage_battle.js"></script>
+
+
+    <script>
+      $(document).foundation();
+    </script>
+
+
+  </body>
+</html>

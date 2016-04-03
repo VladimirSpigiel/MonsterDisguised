@@ -1,0 +1,52 @@
+
+<div ng-controller="LoginCtrl">
+  <div class="row">
+
+    <div class="row text-center test">
+        <h2> LOGIN FORM </h2>
+    </div>
+    
+    <hr>
+
+    
+    <br>
+    <form class="columns large-5 large-centered">
+    <fieldset>
+      <legend>LOGIN</legend>
+
+     
+        <div class="row collapse">
+            <div class="small-2  columns">
+              <span class="prefix"><i class="fi-torso-female"></i></span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" placeholder="pseudo" ng-model="user.pseudo">
+            </div>
+        </div>
+
+
+        <div class="row collapse">
+            <div class="small-2  columns">
+              <span class="prefix"><i class="fi-key"></i></span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" placeholder="password" ng-model="user.password">
+            </div>
+        </div>
+        <br>
+
+        <button class="button alert left" ng-click="sendForm()"> LOG IN &nbsp; <span class="fi-arrow-right"></span></button>
+
+         <a href='#/signup' class="button secondary right"> REGISTER &nbsp; <span class="fi-book-bookmark"></span></a>
+      
+      
+    </fieldset>
+  </form> 
+
+  <br>
+
+
+
+   </div>
+
+</div>

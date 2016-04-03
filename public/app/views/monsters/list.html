@@ -1,0 +1,40 @@
+
+<div ng-controller="ListMonstersCtrl"></div>  
+
+
+ <div class="row text-center test">
+        <h2> BACK OFFICE - MONSTERS </h2>
+    </div>
+    
+    <hr>
+
+
+  <div class="row text-center">
+    <a href="#/manage_monsters/create" class="button success">
+    CREATE A NEW MONSTER
+    </a>
+  </div>
+  
+  <table class="flat-table" >
+              <tbody>
+                <tr>
+                  <th width="200">Name</th>
+                  <th width="200">Description</th>
+                  <th width="200">Rarity (%)</th>
+                  <th width="200">Type</th>
+                  <th width="50">Show</th>
+                  <th width="50">Edit</th>
+                  <th width="50">Delete</th>
+                </tr>
+                <tr class="content" ng-repeat="monster in monsters">
+                  <td>{{monster.name}}</td>
+                  <td>{{monster.description}}</td>
+                  <td>{{monster.rarity*100}}</td>
+                  <td>{{monster.type}}</td>
+                    <td><a href="#/manage_monsters/show/{{monster._id}}"><span class="fi-eye"></span></a></td>
+                  <td><a href="#/manage_monsters/edit/{{monster._id}}"><span class="fi-pencil"></span></a></td>
+                     <td><a href="#/manage_monsters/delete/{{monster._id}}"><span class="fi-x"></span></a></td>
+                </tr>
+                
+              </tbody>
+            </table> 

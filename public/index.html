@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+
+  </head>
+  <body>
+
+    <form method='post' action='/account/login'>
+        <label> pseudo : </label><input name='pseudo'/> <br>
+        <label> mdp : </label><input name='password'/><br>
+        <button type='submit'>Envoyer</button>
+    </form>
+
+    <button onclick="matchmaking()">Join</button>
+     <button onclick="attack()">Attack</button>
+     <button onclick="switchMob()">Switch</button>
+
+  </body>
+
+
+
+  <script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+  
+  
+
+  function matchmaking(){
+    socket.emit("matchmaking_request")
+
+  }
+
+  function attack(atk){
+    socket.emit("attack", socket.currentMob.attacks[0])
+  }
+
+  function switchMob(mob){
+    if(mob){
+      socket.emit("switchMob", mob);
+    }else{
+      socket.emit("nextMob");
+    }
+    
+  }
+
+
+
+
+
+  socket.on("user-data", function(data){
+    socket.user = data.user;
+  })
+
+  socket.on("ready", function(){
+    console.log("got ready")
+  })
+
+  socket.on("currentMob",function(mob){
+    socket.currentMob = mob;
+  })
+
+  socket.on("mobIsDead", function(mob){
+    console.log("DEAD : ", mob)
+  })
+
+  socket.on("updateCurrentMob", function(mob){
+    socket.currentMob = mob;
+  })
+
+  socket.on("updateTeam", function(team){
+    socket.user.team = team;
+  })
+
+  socket.on("winBattle", function(){
+    console.log("YOU WIN")
+    socket.disconnect();
+  })  
+
+  socket.on("looseBattle", function(){
+    console.log("YOU LOOSE")
+    socket.disconnect();
+  })
+
+  socket.on("missTarget", function(){
+    console.log("You missed your target ! Pffff ... shame")
+  })
+
+  socket.on("yourTurn", function(){
+    console.log("ITS MY TURN");
+  })
+
+  socket.on("opponentTurn", function(){
+    console.log("Opponent turn ...")
+  })
+
+
+</script>
+</html>

@@ -1,0 +1,67 @@
+
+<div ng-controller="ShowUsersCtrl"></div>
+
+
+ <div class="row text-center test">
+        <h2> BACK OFFICE - USERS </h2>
+    </div>
+    
+    <hr>
+
+  
+
+    <br>
+     <form class="columns large-5 large-centered" ng-model="user">
+    <fieldset>
+      <legend>USER NR° {{user._id}}</legend>
+             
+        <div class="row collapse">
+            <div class="small-2  columns">
+              <span class="prefix">Name</span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" ng-model="user.pseudo" disabled value={{user.pseudo}}>
+            </div>
+        </div>
+
+
+        <div class="row collapse">
+            <div class="small-2  columns">
+             <span class="prefix">Role</span>
+            </div>
+            <div class="small-10  columns">
+              <select ng-model="user.role" disabled >
+                
+                <option value="ROLE_USER">ROLE_USER</option>
+               <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+              </select>
+              
+            </div>
+        </div>
+
+         <div class="row collapse">
+            <div class="small-2  columns">
+              <span class="prefix">Gold</span>
+            </div>
+            <div class="small-10  columns">
+              <input type="text" ng-model="user.gold" disabled value={{user.gold}}>
+            </div>
+        </div>
+
+
+
+
+        <br>
+
+      
+    <a href="#/manage_users/edit/{{user._id}}" class="button success left" ng-click="sendForm()"> Edit </button>
+
+    <a href="#/manage_users/delete/{{user._id}}" class="button secondary right"> Delete </a>
+      
+    </fieldset>
+  </form> 
+
+
+  
+
+  <br>
