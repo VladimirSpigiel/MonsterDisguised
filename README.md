@@ -1,4 +1,4 @@
-# MonsterDisguised
+# Monster Disguised (2015)
 This project was done during my engineering school in computer science. 
 It's a multiplayer game turn that looks like Pokemon.
 
